@@ -1,10 +1,10 @@
-package com.example.esercizio3.service;
+package com.example.esercizio4.service;
 
-import com.example.esercizio3.dto.PersonDto;
-import com.example.esercizio3.model.Profession;
-import com.example.esercizio3.repository.PersonRepository;
-import com.example.esercizio3.model.Person;
-import com.example.esercizio3.repository.ProfessionRepository;
+import com.example.esercizio4.dto.PersonDto;
+import com.example.esercizio4.model.Profession;
+import com.example.esercizio4.repository.PersonRepository;
+import com.example.esercizio4.model.Person;
+import com.example.esercizio4.repository.ProfessionRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

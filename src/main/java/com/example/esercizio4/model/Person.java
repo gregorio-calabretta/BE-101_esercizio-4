@@ -1,4 +1,4 @@
-package com.example.esercizio3.model;
+package com.example.esercizio4.model;
 
 import jakarta.persistence.*;
 

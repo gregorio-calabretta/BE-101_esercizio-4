@@ -1,7 +1,7 @@
-package com.example.esercizio3.controller;
+package com.example.esercizio4.controller;
 
-import com.example.esercizio3.model.Profession;
-import com.example.esercizio3.service.ProfessionService;
+import com.example.esercizio4.model.Profession;
+import com.example.esercizio4.service.ProfessionService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

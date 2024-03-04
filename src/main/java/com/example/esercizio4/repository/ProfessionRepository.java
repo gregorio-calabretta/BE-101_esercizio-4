@@ -1,6 +1,6 @@
-package com.example.esercizio3.repository;
+package com.example.esercizio4.repository;
 
-import com.example.esercizio3.model.Profession;
+import com.example.esercizio4.model.Profession;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
