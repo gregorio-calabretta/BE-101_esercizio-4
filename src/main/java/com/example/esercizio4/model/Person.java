@@ -1,11 +1,17 @@
 package com.example.esercizio4.model;
 
 import jakarta.persistence.*;
+import jdk.jfr.DataAmount;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.Getter;
 
 import java.util.UUID;
-
+@Data
 @Entity
 @Table(name = "person")
+
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -23,26 +29,7 @@ public class Person {
     }
     public Person() {
     }
-
-
-    public UUID getId() {
-        return id;
-    }
-    public String getName(){
-        return name;
-    }
-    public String getSurname(){
-        return surname;
-    }
-
-    public Profession getProfession() {
-        return profession;
-    }
-
     public void addProfession(Profession profession){
         this.profession = profession;
     }
-
-
-
 }

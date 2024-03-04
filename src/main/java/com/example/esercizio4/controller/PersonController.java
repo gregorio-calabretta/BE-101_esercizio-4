@@ -12,7 +12,6 @@ import java.util.UUID;
 @RestController
 public class PersonController {
 
-
     private final PersonService personService;
 
     public PersonController(PersonService personService) {

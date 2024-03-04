@@ -26,12 +26,10 @@ public class ProfessionController {
         return professionService.findByNameAndSurname(name,surname);
     }
 
-
     @GetMapping(path = "{professionId}")
     public Profession getProfessionById(@PathVariable("professionId") Integer id){
         return professionService.getProfessionById(id);
     }
-
     @GetMapping(path = "/")
     public List<Profession> getAllProfessions(){
         return professionService.getAllProfessions();

@@ -2,9 +2,10 @@ package com.example.esercizio4.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.List;
-
+@Data
 @Entity
 @Table(name = "profession")
 public class Profession {
@@ -17,17 +18,12 @@ public class Profession {
         this.id = id;
         this.name = name;
     }
-
-    public Profession(){};
+    public Profession() {
+    }
 
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List<Person> person;
 
-    public int getId() {
-        return id;
-    }
 
-    public String getName() {
-        return name;
-    }
+
 }
