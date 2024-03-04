@@ -1,7 +1,9 @@
 package com.example.esercizio4.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 
+@Data
 public class PersonDto {
     private String name;
     private String surname;
@@ -11,17 +13,5 @@ public class PersonDto {
         this.name = name;
         this.surname = surname;
         this.profession = profession;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public String getProfession() {
-        return profession;
     }
 }

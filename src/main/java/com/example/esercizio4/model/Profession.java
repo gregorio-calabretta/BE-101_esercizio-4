@@ -13,7 +13,6 @@ public class Profession {
     private Integer id;
     private String name;
 
-
     public Profession(@JsonProperty Integer id,@JsonProperty String name) {
         this.id = id;
         this.name = name;
@@ -23,7 +22,4 @@ public class Profession {
 
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List<Person> person;
-
-
-
 }

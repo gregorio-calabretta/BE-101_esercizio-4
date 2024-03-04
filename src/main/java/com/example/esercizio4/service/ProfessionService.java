@@ -5,7 +5,6 @@ import com.example.esercizio4.model.Profession;
 import com.example.esercizio4.repository.PersonRepository;
 import com.example.esercizio4.repository.ProfessionRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
