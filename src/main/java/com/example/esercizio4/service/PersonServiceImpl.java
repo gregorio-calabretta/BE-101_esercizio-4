@@ -22,7 +22,7 @@ public class PersonServiceImpl implements PersonService {
     }
 
     public void addPerson(PersonDto personDto){
-        Person person = new Person(personDto.getName(),personDto.getSurname());
+        Person person = Person.builder().name(personDto.getName()).surname(personDto.getSurname()).build();//new Person(personDto.getName(),personDto.getSurname());
         Profession profession = professionRepository.findByName(personDto.getProfession());
         person.addProfession(profession);
         personRepository.save(person);
