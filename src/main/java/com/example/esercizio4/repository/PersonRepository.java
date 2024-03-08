@@ -13,8 +13,6 @@ public interface PersonRepository extends JpaRepository<Person,UUID> {
     Person save(Person person);
     List<Person> findAll();
     void deleteById(UUID id);
-
     Optional<Person> findById(UUID id);
-
     Person findByNameAndSurname(String name, String surname);
 }

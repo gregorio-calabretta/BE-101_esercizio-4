@@ -1,9 +1,16 @@
 package com.example.esercizio4.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.UUID;
-
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "person")
 public class Person {
@@ -12,37 +19,12 @@ public class Person {
     private UUID id;
     private String name;
     private String surname;
-
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.DETACH)
     private Profession profession;
 
-    public Person(String name, String surname ) {
-        this.name = name;
-        this.surname = surname;
-
-    }
-    public Person() {
-    }
-
-
-    public UUID getId() {
-        return id;
-    }
-    public String getName(){
-        return name;
-    }
-    public String getSurname(){
-        return surname;
-    }
-
-    public Profession getProfession() {
-        return profession;
-    }
 
     public void addProfession(Profession profession){
         this.profession = profession;
     }
-
-
 
 }

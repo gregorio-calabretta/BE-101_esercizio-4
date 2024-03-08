@@ -1,39 +1,17 @@
 package com.example.esercizio4.service;
 
-import com.example.esercizio4.model.Person;
+
+import com.example.esercizio4.dto.ProfessionDtoRequest;
+import com.example.esercizio4.dto.ProfessionDtoResponse;
 import com.example.esercizio4.model.Profession;
-import com.example.esercizio4.repository.PersonRepository;
-import com.example.esercizio4.repository.ProfessionRepository;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class ProfessionService {
-    private final ProfessionRepository professionRepository;
-    private final PersonRepository personRepository;
-    public ProfessionService(ProfessionRepository professionRepository, PersonRepository personRepository) {
-        this.professionRepository = professionRepository;
-        this.personRepository = personRepository;
-    }
-
-    public void addProfession(Profession profession){
-         professionRepository.save(profession);
-    }
-
-
-
-    public Profession findByNameAndSurname(String name, String surname) {
-        Person person = personRepository.findByNameAndSurname(name,surname);
-        return person.getProfession();
-    }
-
-    public Profession getProfessionById(Integer id) {
-        return professionRepository.findById(id).orElse(null);
-    }
-
-    public List<Profession> getAllProfessions(){
-        return professionRepository.findAll();
-    }
-
+public interface ProfessionService {
+     ProfessionDtoResponse addProfession(ProfessionDtoRequest profession);
+     Profession findByNameAndSurname(String name, String surname);
+     ProfessionDtoResponse getProfessionById(Integer id);
+     List<ProfessionDtoResponse> getAllProfessions();
+     void  deleteById(Integer id);
+     public void updateProfession(Integer id,String name);
 }
