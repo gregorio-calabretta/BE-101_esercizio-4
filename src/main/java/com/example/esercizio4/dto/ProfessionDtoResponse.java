@@ -1,4 +1,14 @@
 package com.example.esercizio4.dto;
 
-public class ProfessionDtoResponce {
+import lombok.Data;
+
+@Data
+public class ProfessionDtoResponse {
+    private Integer id;
+    private String name;
+
+    public ProfessionDtoResponse(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 }

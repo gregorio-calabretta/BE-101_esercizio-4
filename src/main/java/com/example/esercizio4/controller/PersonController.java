@@ -1,8 +1,11 @@
 package com.example.esercizio4.controller;
 
-import com.example.esercizio4.dto.PersonDto;
+import com.example.esercizio4.dto.PersonDtoRequest;
+import com.example.esercizio4.dto.PersonDtoResponse;
 import com.example.esercizio4.model.Person;
 import com.example.esercizio4.service.PersonService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,19 +22,21 @@ public class PersonController {
     }
 
     @PostMapping
-    public void addPerson(@RequestBody PersonDto person){
-        personService.addPerson(person);
+    public ResponseEntity<PersonDtoResponse> createPerson(@RequestBody PersonDtoRequest person){
+        PersonDtoResponse responseDTO  = personService.createPerson(person);
+        return ResponseEntity.status(HttpStatus.CREATED).body(responseDTO);
     }
 
     @GetMapping
-    public List<Person> getAllPeople(){
-        return personService.getAllPeople();
+    public ResponseEntity<List<PersonDtoResponse>> getAllPeople(){
+        List<PersonDtoResponse> personListDTOs = personService.getAllPeople();
+        return ResponseEntity.status(HttpStatus.OK).body(personListDTOs);
     }
 
     @GetMapping(path = "{personUuid}")
-    public Person getPersonById(@PathVariable("personUuid") UUID id){
-        return personService.getPersonById(id)
-                .orElse(null);
+    public ResponseEntity<PersonDtoResponse> getPersonById(@PathVariable("personUuid") UUID id){
+        PersonDtoResponse responseDTO = personService.getPersonById(id);
+        return ResponseEntity.status(HttpStatus.OK).body(responseDTO);
     }
 
     @DeleteMapping(path = "{personUuid}")
